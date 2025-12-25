@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sweta Bharati Goswami | Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+    body {
+      background: linear-gradient(135deg, #e0e7ff, #f8fafc);
+      color: #1f2933;
+      transition: background 0.4s ease, color 0.4s ease;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    body.dark {
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      padding: 90px 20px;
+      text-align: center;
+      animation: slideDown 1s ease;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-60px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    body.dark header {
+      background: linear-gradient(135deg, #020617, #1e293b);
+    }
+
+    .profile-img {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      border: 5px solid white;
+      object-fit: cover;
+      margin-bottom: 15px;
+      animation: zoomIn 1s ease;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.6); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    section { padding: 70px 10%; animation: fadeUp 1.2s ease; }
+
+    @keyframes fadeUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    h2 { margin-bottom: 25px; color: #1e3a8a; }
+    body.dark h2 { color: #93c5fd; }
+
+    .card {
+      background: white;
+      padding: 32px;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      margin-bottom: 40px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 25px 55px rgba(0,0,0,0.25);
+    }
+
+    body.dark .card { background: #020617; }
+
+    .skills-grid span {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 25px;
+      margin: 8px;
+      font-size: 14px;
+      transition: transform 0.3s ease;
+    }
+
+    .skills-grid span:hover { transform: scale(1.1); }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      transition: transform 0.4s ease;
+    }
+
+    .project-card:hover { transform: translateY(-10px); }
+
+    body.dark .project-card { background: #020617; }
+
+    .project-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .project-card h3, .project-card p { padding: 15px; }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 18px;
+      height: 190px;
+      object-fit: cover;
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.08);
+      filter: brightness(1.1);
+    }
+
+    footer {
+      background: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .dark-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 30px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+    }
+
+    .dark-toggle:hover { transform: scale(1.1); }
+  </style>
+</head>
+<body>
+
+  <button class="dark-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
+  <header>
+    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" alt="Profile Photo" class="profile-img" />
+    <h1>Sweta Bharati Goswami</h1>
+    <p>MCA Student | Python Learner | Aspiring Software Developer</p>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <div class="card">
+      <p>
+        I am an MCA student and a beginner in programming. I am currently learning Python,
+        Data Structures, Artificial Intelligence, and core computer science subjects. I enjoy building
+        creative and meaningful projects.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="card skills-grid">
+      <span>Python</span>
+      <span>Java</span>
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>AI Basics</span>
+      <span>OS</span>
+      <span>Computer Networks</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="Project 1" />
+        <h3>Emotion Based Music Recommendation</h3>
+        <p>AI system that recommends music based on user emotion.</p>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1509223197845-458d87318791" alt="Project 2" />
+        <h3>E-Tongue for Dravya Identification</h3>
+        <p>Ayurveda-inspired AI project for taste identification.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" />
+      <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f" />
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" />
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Email: your-swetabharatig@gmail.com</p>
+      <p>LinkedIn: linkedin.com/in/swetabharatigoswami</p>
+      <p>GitHub: github.com/swetabharatig</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Sweta Bharati Goswami | Portfolio</p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+
+</body>
+
+</body>
+</html>
